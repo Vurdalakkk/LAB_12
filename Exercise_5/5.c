@@ -1,60 +1,60 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-// Необходимые библиотеки
+// РќРµРѕР±С…РѕРґРёРјС‹Рµ Р±РёР±Р»РёРѕС‚РµРєРё
 #include <stdio.h>
 #include <locale.h>
 
-// Основная функция
+// РћСЃРЅРѕРІРЅР°СЏ С„СѓРЅРєС†РёСЏ
 int main()
 {
-	// Русская локаль
+	// Р СѓСЃСЃРєР°СЏ Р»РѕРєР°Р»СЊ
 	setlocale(LC_CTYPE, "RUS");
 
-	// Побайтовый вывод int
+	// РџРѕР±Р°Р№С‚РѕРІС‹Р№ РІС‹РІРѕРґ int
 	int num_int = 0x12345678;
 	unsigned char* p = (unsigned char*)&num_int;
 
-	printf("Целое число: %d (0x%08X)\n", num_int, num_int);
-	printf("Побайтовый вывод (порядок байтов в памяти):\n");
+	printf("Р¦РµР»РѕРµ С‡РёСЃР»Рѕ: %d (0x%08X)\n", num_int, num_int);
+	printf("РџРѕР±Р°Р№С‚РѕРІС‹Р№ РІС‹РІРѕРґ (РїРѕСЂСЏРґРѕРє Р±Р°Р№С‚РѕРІ РІ РїР°РјСЏС‚Рё):\n");
 
 	for (int i = 0; i < sizeof(int); i++)
 	{
-		printf("Байт %d: адрес %p, значение 0x%02X\n", i, p + i, *(p + i));
+		printf("Р‘Р°Р№С‚ %d: Р°РґСЂРµСЃ %p, Р·РЅР°С‡РµРЅРёРµ 0x%02X\n", i, p + i, *(p + i));
 	}
 
-	// Определение порядка байтов
-	printf("\nПорядок байтов в системе: ");
+	// РћРїСЂРµРґРµР»РµРЅРёРµ РїРѕСЂСЏРґРєР° Р±Р°Р№С‚РѕРІ
+	printf("\nРџРѕСЂСЏРґРѕРє Р±Р°Р№С‚РѕРІ РІ СЃРёСЃС‚РµРјРµ: ");
 	if (*p == 0x78)
-		printf("Little-endian (прямой порядок)\n");
+		printf("Little-endian (РїСЂСЏРјРѕР№ РїРѕСЂСЏРґРѕРє)\n");
 	else if (*p == 0x12)
-		printf("Big-endian (обратный порядок)\n");
+		printf("Big-endian (РѕР±СЂР°С‚РЅС‹Р№ РїРѕСЂСЏРґРѕРє)\n");
 	else
-		printf("Неизвестный порядок\n");
+		printf("РќРµРёР·РІРµСЃС‚РЅС‹Р№ РїРѕСЂСЏРґРѕРє\n");
 
-	// Сравнение разных типов
-	printf("\nСравнение для числа 12345:\n");
+	// РЎСЂР°РІРЅРµРЅРёРµ СЂР°Р·РЅС‹С… С‚РёРїРѕРІ
+	printf("\nРЎСЂР°РІРЅРµРЅРёРµ РґР»СЏ С‡РёСЃР»Р° 12345:\n");
 
 	int int_num = 12345;
 	float float_num = 12345.0;
 	double double_num = 12345.0;
 
-	// Вывод int
+	// Р’С‹РІРѕРґ int
 	printf("\nint (12345):\n");
 	p = (unsigned char*)&int_num;
 	for (int i = 0; i < sizeof(int); i++)
-		printf("Байт %d: 0x%02X\n", i, *(p + i));
+		printf("Р‘Р°Р№С‚ %d: 0x%02X\n", i, *(p + i));
 
-	// Вывод float
+	// Р’С‹РІРѕРґ float
 	printf("\nfloat (12345.0):\n");
 	p = (unsigned char*)&float_num;
 	for (int i = 0; i < sizeof(float); i++)
-		printf("Байт %d: 0x%02X\n", i, *(p + i));
+		printf("Р‘Р°Р№С‚ %d: 0x%02X\n", i, *(p + i));
 
-	// Вывод double
+	// Р’С‹РІРѕРґ double
 	printf("\ndouble (12345.0):\n");
 	p = (unsigned char*)&double_num;
 	for (int i = 0; i < sizeof(double); i++)
-		printf("Байт %d: 0x%02X\n", i, *(p + i));
+		printf("Р‘Р°Р№С‚ %d: 0x%02X\n", i, *(p + i));
 
 	getchar();
 	return 0;
