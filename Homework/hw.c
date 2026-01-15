@@ -1,16 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-// Необходимые библиотеки
+// РќРµРѕР±С…РѕРґРёРјС‹Рµ Р±РёР±Р»РёРѕС‚РµРєРё
 #include <stdio.h>
 #include <locale.h>
 
-// Основная функция
+// РћСЃРЅРѕРІРЅР°СЏ С„СѓРЅРєС†РёСЏ
 int main()
 {
-	// Русская локаль
+	// Р СѓСЃСЃРєР°СЏ Р»РѕРєР°Р»СЊ
 	setlocale(LC_CTYPE, "RUS");
 
-	// Переменные разных типов
+	// РџРµСЂРµРјРµРЅРЅС‹Рµ СЂР°Р·РЅС‹С… С‚РёРїРѕРІ
 	char c1, c2;
 	short int si1, si2;
 	unsigned short int usi1, usi2;
@@ -23,8 +23,8 @@ int main()
 	double d1, d2;
 	signed int ssi1, ssi2;
 
-	// Вычисление размеров через разность адресов
-	printf("Размеры типов данных (в байтах):\n");
+	// Р’С‹С‡РёСЃР»РµРЅРёРµ СЂР°Р·РјРµСЂРѕРІ С‡РµСЂРµР· СЂР°Р·РЅРѕСЃС‚СЊ Р°РґСЂРµСЃРѕРІ
+	printf("Р Р°Р·РјРµСЂС‹ С‚РёРїРѕРІ РґР°РЅРЅС‹С… (РІ Р±Р°Р№С‚Р°С…):\n");
 	printf("1) char: %lu\n", (unsigned long)(&c2 - &c1));
 	printf("2) short int: %lu\n", (unsigned long)((char*)&si2 - (char*)&si1));
 	printf("3) unsigned short int: %lu\n", (unsigned long)((char*)&usi2 - (char*)&usi1));
