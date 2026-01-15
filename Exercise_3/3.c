@@ -1,47 +1,47 @@
 #define _CRT_SECURE_NO_WARNINGS
 
-// Необходимые библиотеки
+// РќРµРѕР±С…РѕРґРёРјС‹Рµ Р±РёР±Р»РёРѕС‚РµРєРё
 #include <stdio.h>
 #include <locale.h>
 
-// Основная функция
+// РћСЃРЅРѕРІРЅР°СЏ С„СѓРЅРєС†РёСЏ
 int main()
 {
-	// Русская локаль
+	// Р СѓСЃСЃРєР°СЏ Р»РѕРєР°Р»СЊ
 	setlocale(LC_CTYPE, "RUS");
 
-	// Исследование для int
-	printf("=== Исследование для int ===\n");
+	// РСЃСЃР»РµРґРѕРІР°РЅРёРµ РґР»СЏ int
+	printf("=== РСЃСЃР»РµРґРѕРІР°РЅРёРµ РґР»СЏ int ===\n");
 	int x_int = 5;
 	int* pa_int = &x_int;
 
-	printf("Начальный адрес: %p, значение: %d\n", pa_int, *pa_int);
+	printf("РќР°С‡Р°Р»СЊРЅС‹Р№ Р°РґСЂРµСЃ: %p, Р·РЅР°С‡РµРЅРёРµ: %d\n", pa_int, *pa_int);
 	pa_int++;
-	printf("После pa++: %p (смещение)\n", pa_int);
+	printf("РџРѕСЃР»Рµ pa++: %p (СЃРјРµС‰РµРЅРёРµ)\n", pa_int);
 	pa_int--;
-	printf("После pa--: %p (возврат)\n", pa_int);
+	printf("РџРѕСЃР»Рµ pa--: %p (РІРѕР·РІСЂР°С‚)\n", pa_int);
 
-	// Исследование для double
-	printf("\n=== Исследование для double ===\n");
+	// РСЃСЃР»РµРґРѕРІР°РЅРёРµ РґР»СЏ double
+	printf("\n=== РСЃСЃР»РµРґРѕРІР°РЅРёРµ РґР»СЏ double ===\n");
 	double x_double = 5.0;
 	double* pa_double = &x_double;
 
-	printf("Начальный адрес: %p, значение: %lf\n", pa_double, *pa_double);
+	printf("РќР°С‡Р°Р»СЊРЅС‹Р№ Р°РґСЂРµСЃ: %p, Р·РЅР°С‡РµРЅРёРµ: %lf\n", pa_double, *pa_double);
 	pa_double++;
-	printf("После pa++: %p (смещение)\n", pa_double);
+	printf("РџРѕСЃР»Рµ pa++: %p (СЃРјРµС‰РµРЅРёРµ)\n", pa_double);
 	pa_double--;
-	printf("После pa--: %p (возврат)\n", pa_double);
+	printf("РџРѕСЃР»Рµ pa--: %p (РІРѕР·РІСЂР°С‚)\n", pa_double);
 
-	// Исследование для char
-	printf("\n=== Исследование для char ===\n");
+	// РСЃСЃР»РµРґРѕРІР°РЅРёРµ РґР»СЏ char
+	printf("\n=== РСЃСЃР»РµРґРѕРІР°РЅРёРµ РґР»СЏ char ===\n");
 	char x_char = 'A';
 	char* pa_char = &x_char;
 
-	printf("Начальный адрес: %p, значение: %c\n", pa_char, *pa_char);
+	printf("РќР°С‡Р°Р»СЊРЅС‹Р№ Р°РґСЂРµСЃ: %p, Р·РЅР°С‡РµРЅРёРµ: %c\n", pa_char, *pa_char);
 	pa_char++;
-	printf("После pa++: %p (смещение)\n", pa_char);
+	printf("РџРѕСЃР»Рµ pa++: %p (СЃРјРµС‰РµРЅРёРµ)\n", pa_char);
 	pa_char--;
-	printf("После pa--: %p (возврат)\n", pa_char);
+	printf("РџРѕСЃР»Рµ pa--: %p (РІРѕР·РІСЂР°С‚)\n", pa_char);
 
 	getchar();
 	return 0;
